@@ -1,2 +1,19 @@
-# Portfolio
-My Data Science Portfolio – Projects, Dashboards, and Notebooks
+# Hi there, I'm Ilaria! 👋
+Welcome to my Data Science Portfolio. Here you'll find a collection of my projects, ranging from data analysis and visualization to machine learning models.
+
+## 🚀 Featured Projects
+
+| Project Name | Description | Tech Stack | Deliverables / Links |
+| :--- | :--- | :--- | :--- |
+| **Customer Churn Analysis** | Predicted customer churn using Churn Dataset. Included EDA and a predictive model. | Python, Pandas, Scikit-Learn | [🇬🇧 Notebook (EN)](#) / [🇮🇹 Notebook (IT)](#) <br> [📊 Slides (Canva)](#) |
+| **Sales Performance Dashboard** | Interactive dashboard to track business KPIs and quarterly revenue growth. | Tableau, SQL | [📈 Tableau Dashboard](#) <br> [🇬🇧 Executive Summary (EN)](#) |
+
+## 🛠️ Skills & Tools
+* **Programming:** Python (Pandas, NumPy, Scikit-Learn), SQL
+* **Data Visualization:** Tableau, Looker Studio, Canva
+* **Methodologies:** Exploratory Data Analysis (EDA), Predictive Modeling
+
+## 📫 Connect with me
+* **LinkedIn:** [link-al-tuo-profilo](#)
+* **Email:** ilariabertotti9@gmail.com
+

@@ -1,0 +1,216 @@
+-- SQL PROJECT - ILARIA BERTOTTI
+
+
+--# TAB 1  
+-- Page 6
+-- Calculates total electricity consumption from fossil fuels, nuclear energy, and renewables per year.
+-- Totals are aggregated across all 195 countries.
+-- Timeframe: 2000 to 2020 (inclusive).
+
+SELECT
+	YEAR,
+	SUM(ELECTRICITY_FROM_FOSSIL_FUELS_TWH) AS TOTAL_FOSSIL_FUELS_TWH,
+	SUM(ELECTRICITY_FROM_NUCLEAR_TWH) AS TOTAL_NUCLEAR_TWH,
+	SUM(ELECTRICITY_FROM_RENEWABLES_TWH) AS TOTAL_RENEWABLES_TWH
+FROM
+	GLOBAL_DATA_ON_SUSTAINABLE_ENERGY
+GROUP BY
+	YEAR
+ORDER BY
+	YEAR;
+
+
+------------------------------------------------------
+																																				
+
+--# TAB 2 
+-- Page 8
+-- Comparison between the percentage of the population with access to electricity 
+-- versus access to clean fuels for cooking.
+
+SELECT
+	YEAR,
+	AVG(ACCESS_TO_ELECTRICITY_PERCENTAGE_OF_POPULATION) AS AVG_ACCESS_TO_ELECTRICITY,
+	AVG(PERCENTAGE_OF_ACCESS_TO_CLEAN_FUELS_FOR_COOKING) AS AVG_ACCESS_TO_CLEAN_COOKING_FUELS
+FROM
+	GLOBAL_DATA_ON_SUSTAINABLE_ENERGY
+GROUP BY
+	YEAR
+ORDER BY
+	YEAR;
+
+
+--###### GLOBAL COUNTRY INFORMATION DATASET ########
+
+-- TAB 3
+-- Page 10
+-- Comparison between infant mortality and life expectancy. A correlation is observed.
+
+SELECT
+	COUNTRY,
+	INFANT_MORTALITY,
+	LIFE_EXPECTANCY	
+FROM
+	GLOBAL_COUNTRY_INFORMATION
+ORDER BY 
+	LIFE_EXPECTANCY;
+
+
+--##### MIGRANTS DATABASE #####
+
+-- TAB 4
+-- Page 12
+-- Histogram showing the total number of incidents per year (2000 - 2020).
+
+SELECT
+	INCIDENT_YEAR,
+	COUNT(INCIDENT_YEAR) AS TOTAL_INCIDENTS_PER_YEAR
+FROM
+	GLOBAL_MISSING_MIGRANTS
+GROUP BY
+	INCIDENT_YEAR
+ORDER BY 
+	INCIDENT_YEAR;
+
+
+-- TAB 5
+-- Page 13
+-- Analysis across the 10-year timeframe to identify seasonal trends or monthly frequency of incidents.
+
+SELECT
+	REPORTED_MONTH,
+	COUNT(REPORTED_MONTH) AS TOTAL_INCIDENTS
+FROM
+	GLOBAL_MISSING_MIGRANTS
+GROUP BY
+	REPORTED_MONTH
+ORDER BY 
+	COUNT(REPORTED_MONTH);
+
+
+-- EXTRA TAB
+-- CHART NOT INCLUDED IN THE FINAL REPORT
+-- This query helps understand a data anomaly in 2023: fewer incidents are recorded because data collection stopped after July.
+-- Used strictly for analytical conclusions, not plotted in the report.
+
+SELECT
+	REPORTED_MONTH,
+	COUNT(REPORTED_MONTH) AS TOTAL_INCIDENTS
+FROM
+	GLOBAL_MISSING_MIGRANTS
+WHERE 
+	INCIDENT_YEAR = 2023
+GROUP BY
+	REPORTED_MONTH;
+
+
+-- TAB 6
+-- Page 14
+-- Number of incidents segmented by geographical region.
+
+SELECT
+	REGION_OF_INCIDENT,
+	COUNT(REGION_OF_INCIDENT) AS NUMBER_OF_INCIDENTS
+FROM
+	GLOBAL_MISSING_MIGRANTS
+GROUP BY
+	REGION_OF_INCIDENT
+ORDER BY 
+	NUMBER_OF_INCIDENTS;
+
+
+--##################################
+
+-- TAB 7
+-- Page 15
+-- 2023 incidents segmented by geographical region.
+
+SELECT
+	REGION_OF_INCIDENT,
+	COUNT(REGION_OF_INCIDENT) AS NUMBER_OF_INCIDENTS
+FROM
+	GLOBAL_MISSING_MIGRANTS
+WHERE 
+	INCIDENT_YEAR = 2023
+GROUP BY
+	REGION_OF_INCIDENT
+ORDER BY 
+	NUMBER_OF_INCIDENTS;
+
+--##################################
+
+-- TAB 8
+-- Page 17
+-- Number of deaths by geographical region of origin in 2022.
+-- A simple 2-column table: region of origin vs total recorded deaths.
+
+SELECT
+	REGION_OF_ORIGIN,
+	COUNT(NUMBER_OF_DEAD) AS NUMBER_OF_DEATHS
+FROM
+	GLOBAL_MISSING_MIGRANTS
+WHERE
+	INCIDENT_YEAR = 2022
+GROUP BY
+	REGION_OF_ORIGIN
+ORDER BY
+	NUMBER_OF_DEATHS DESC;
+
+--##################################
+
+-- TAB 9
+-- Page 18
+-- Deaths by region of origin mapped alongside deaths by country of origin (2022).
+-- Displays country-specific deaths adjacent to the total deaths of its respective macro-region.
+
+WITH REGIONAL_SUMMARY AS (
+	SELECT
+		COUNTRY_OF_ORIGIN,  
+		REGION_OF_ORIGIN,
+		COUNT(NUMBER_OF_DEAD) AS DEATHS_PER_COUNTRY  
+	FROM                                                 
+		GLOBAL_MISSING_MIGRANTS
+	WHERE
+		INCIDENT_YEAR = 2022
+	GROUP BY 
+		COUNTRY_OF_ORIGIN,
+		REGION_OF_ORIGIN
+)
+SELECT
+	R.COUNTRY_OF_ORIGIN,
+	GMM.REGION_OF_ORIGIN,
+	R.DEATHS_PER_COUNTRY,
+	COUNT(GMM.NUMBER_OF_DEAD) AS DEATHS_PER_REGION  
+FROM
+	GLOBAL_MISSING_MIGRANTS GMM
+	JOIN REGIONAL_SUMMARY R ON GMM.REGION_OF_ORIGIN = R.REGION_OF_ORIGIN
+WHERE
+	GMM.INCIDENT_YEAR = 2022 -- 2022 includes over 2,000 incidents
+GROUP BY
+	GMM.REGION_OF_ORIGIN,
+	R.COUNTRY_OF_ORIGIN,
+	R.DEATHS_PER_COUNTRY
+ORDER BY
+	DEATHS_PER_REGION DESC,
+	R.DEATHS_PER_COUNTRY DESC;	
+
+
+--###### JOIN ######
+
+-- TAB 10
+-- Page 20
+-- JOIN BETWEEN THE FIRST TWO DATABASES
+-- Compares quality-of-life metrics (life expectancy and infant mortality) against access to basic utilities (electricity).
+
+SELECT
+	GLOBAL_DATA_ON_SUSTAINABLE_ENERGY.ENTITY AS COUNTRY,
+	GLOBAL_DATA_ON_SUSTAINABLE_ENERGY.ACCESS_TO_ELECTRICITY_PERCENTAGE_OF_POPULATION AS ELECTRICITY_ACCESS_2020,
+	GLOBAL_COUNTRY_INFORMATION.LIFE_EXPECTANCY AS LIFE_EXPECTANCY_2023,
+	GLOBAL_COUNTRY_INFORMATION.INFANT_MORTALITY AS INFANT_MORTALITY_2023
+FROM
+	GLOBAL_DATA_ON_SUSTAINABLE_ENERGY
+	LEFT JOIN GLOBAL_COUNTRY_INFORMATION ON GLOBAL_DATA_ON_SUSTAINABLE_ENERGY.ENTITY = GLOBAL_COUNTRY_INFORMATION.COUNTRY
+WHERE
+	GLOBAL_DATA_ON_SUSTAINABLE_ENERGY.YEAR = 2020
+ORDER BY
+	ELECTRICITY_ACCESS_2020;

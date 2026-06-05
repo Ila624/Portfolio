@@ -1,0 +1,10 @@
+numpy<2.0.0
+pandas
+seaborn
+matplotlib
+nltk
+scikit-learn
+folium
+geopandas
+shapely
+ipython

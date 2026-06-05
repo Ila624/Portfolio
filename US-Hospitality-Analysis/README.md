@@ -27,4 +27,4 @@ Run the Notebook:
 Once the dataset is in place, launch Jupyter and run the analysis:
 
 Bash
-jupyter notebook hotel_analysis.ipynb
+jupyter notebook HotelReviews(EN).ipynb

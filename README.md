@@ -8,6 +8,7 @@ Welcome to my Data Science Portfolio. Here you'll find a collection of my projec
 | **Intro to Data Analysis** |  | Python, Pandas, Scikit-Learn | [🇬🇧 Notebook (EN)](#) / [🇮🇹 Notebook (IT)](#) <br> [📊 Slides (Canva) (EN)](https://canva.link/jfcdwbooq2rhlsm) <br> [📊Slides (Canva) (IT)]() |
 | **[Global Higher Education Analysis](./global-higher-education-analysis/)** | A data-driven report exploring global university enrollment trends, regional gender disparities, and international student mobility across 1,397 institutions | Data Studio |[📊Slides (Canva) (EN)](https://canva.link/g73tggv2ing4lmp) <br>  [📊Slides (Canva) (IT)](https://canva.link/iys5t1lrm11h60b) <br>[📈 Data Studio Dashboard](https://datastudio.google.com/reporting/d1218396-0d63-40d2-ba98-8f0621eafbc4)  [Executive Summary (EN)](#) |
 | [US Hospitality Sector Analysis](./US-Hospitality-Analysis/README.md) | Unsupervised NLP (LDA) and geospatial analysis of hotel reviews to extract regional customer grievances and operational pain points. | Python, Pandas, Seaborn, Scikit-learn (LDA), NLTK, Folium, GeoPandas | [Jupyter Notebook](./US-Hospitality-Analysis/HotelReviews(EN).ipynb) |
+| [migrants](#) |  | PostgreSql, Canva | [Sql file](./SQL-Global-Trends-Analysis/Sql_project.sql) |
 
 ## 🛠️ Skills & Tools
 * **Programming:** Python (Pandas, NumPy, Scikit-Learn), SQL

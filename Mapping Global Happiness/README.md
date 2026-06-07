@@ -3,7 +3,7 @@
 
 An end-to-end data analytics project exploring the macroeconomic, social, and cultural drivers of world happiness prior to the COVID-19 pandemic. This project leverages Python for data cleaning and integration, and Tableau for interactive data visualization and storytelling.
 
- 🎨 **[View the Presentation Slides on Canva](YOUR_CANVA_SLIDES_LINK)** <br>🔗 **[View the Interactive Tableau Dashboard](YOUR_TABLEAU_PUBLIC_DASHBOARD_LINK)**
+ 🎨 **[View the Presentation Slides on Canva](https://canva.link/13edofb1grot9u1)** <br>🔗 **[View the Interactive Tableau Dashboard](https://public.tableau.com/views/WorldHappinessAnalysisEN/Dashboard4?:language=it-IT&publish=yes&:sid=&:display_count=n&:origin=viz_share_link)**
 
 ---
 

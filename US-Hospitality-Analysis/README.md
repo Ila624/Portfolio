@@ -3,6 +3,8 @@ Markdown
 
 This project delivers a data-driven evaluation of the US hospitality sector using Natural Language Processing (NLP) and geospatial analysis. By extracting customer pain points from hotel reviews, the analysis maps regional satisfaction trends and proposes strategic recommendations for service optimization and infrastructure modernizations.
 
+Click here to see the Notebook with Interactive Maps (NBViewer): https://nbviewer.org/github/Ila624/Portfolio/blob/main/US-Hospitality-Analysis/HotelReviews%28EN%29.ipynb
+
 ## 📊 Core Features
 * **Geospatial Mapping:** Interactive nationwide visualization of hotel clusters and performance metrics using `Folium` and `GeoPandas`.
 * **Text Mining & Topic Modeling:** Unsupervised Learning via Latent Dirichlet Allocation (LDA) to group negative feedback into four core operational areas.

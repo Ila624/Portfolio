@@ -1,4 +1,4 @@
-Markdown
+
 # US Hospitality Sector: Sentiment & Regional Grievance Analysis
 
 This project delivers a data-driven evaluation of the US hospitality sector using Natural Language Processing (NLP) and geospatial analysis. By extracting customer pain points from hotel reviews, the analysis maps regional satisfaction trends and proposes strategic recommendations for service optimization and infrastructure modernizations.

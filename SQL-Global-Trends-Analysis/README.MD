@@ -9,7 +9,7 @@ This project delivers a comprehensive, data-driven analysis centered on the Unit
 ## 💻 SQL Code & Queries
 The complete SQL script containing the data cleaning, preprocessing, and `JOIN` operations performed for this project is available directly in this repository:
 
-👉 **[View SQL Queries Script](Sql_project.sql)**
+👉 **[View SQL Queries Script](SustainableDev.sql)**
 
 The study is divided into three interconnected dimensions:
 1. **World Energy Consumption (2000–2020):** Tracking the global energy mix (fossil fuels, nuclear, and renewables) and analyzing infrastructure expansion alongside population growth.

@@ -15,9 +15,9 @@ Welcome to my Data Science Portfolio. Here you'll find a collection of my projec
 
 ## 🛠️ Skills & Tools
 * **Programming:** Python (Pandas, NumPy, Scikit-Learn), SQL
-* **Data Visualization:** Tableau, Looker Studio, Canva
+* **Data Visualization:** Tableau, Data Studio, Canva
 * **Methodologies:** Exploratory Data Analysis (EDA), Predictive Modeling
 
 ## 📫 Connect with me
-* **LinkedIn:** [link-al-tuo-profilo](#)
+* **LinkedIn:** [My profile](www.linkedin.com/in/ilariabertotti)
 * **Email:** ilariabertotti9@gmail.com

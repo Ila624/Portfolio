@@ -6,6 +6,11 @@
 ## 📌 Project Overview
 This project delivers a comprehensive, data-driven analysis centered on the United Nations' **Sustainable Development Goals (SDGs)**. By leveraging SQL for data cleaning and integration, and data visualization tools for reporting, the analysis explores how global development has evolved over the last two decades. 
 
+## 💻 SQL Code & Queries
+The complete SQL script containing the data cleaning, preprocessing, and `JOIN` operations performed for this project is available directly in this repository:
+
+👉 **[View SQL Queries Script](Sql_project.sql)**
+
 The study is divided into three interconnected dimensions:
 1. **World Energy Consumption (2000–2020):** Tracking the global energy mix (fossil fuels, nuclear, and renewables) and analyzing infrastructure expansion alongside population growth.
 2. **Quality of Life Metrics:** Utilizing SQL `JOIN` operations to correlate socioeconomic factors (life expectancy and infant mortality) with electricity access, uncovering a critical global divide.
@@ -16,8 +21,8 @@ The study is divided into three interconnected dimensions:
 ## 📊 Presentation Links
 The insights, charts, and final conclusions of this project have been compiled into an interactive presentation available in both languages:
 
-* 🇮🇹 **[Link alla Presentazione (Italiano)](https://www.canva.com/design/DAGfW-7OC7E/ncdX8ut5evtBgGVblqQE7w/edit)**
-* 🇬🇧 **[Link to Presentation (English)](https://www.canva.com/design/DAHLt5K8Ea4/09tR_BsVQkwtx_V7XiC7Og/edit)**
+* **[Link alla Presentazione (Italiano)](https://www.canva.com/design/DAGfW-7OC7E/ncdX8ut5evtBgGVblqQE7w/edit)**
+* **[Link to Presentation (English)](https://www.canva.com/design/DAHLt5K8Ea4/09tR_BsVQkwtx_V7XiC7Og/edit)**
 
 ---
 

@@ -1,7 +1,7 @@
 [README.md](https://github.com/user-attachments/files/28757524/README.md)
 # Titanic Passenger Analysis and Predictions
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/YOUR_USERNAME/YOUR_REPO/blob/main/TitanicAnalysis_EN.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Ila624/Portfolio/blob/main/Titanic%20Analysis/TitanicAnalysis_(EN).ipynb)
 
 A machine learning project to predict the survival of Titanic passengers, built with a rigorous methodology focused on result generalization and model interpretability.
 

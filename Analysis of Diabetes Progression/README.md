@@ -1,6 +1,8 @@
 [README (3).md](https://github.com/user-attachments/files/29143598/README.3.md)
 # Predictive Analysis of Diabetes Progression
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Ila624/Portfolio/blob/main/Analysis%20of%20Diabetes%20Progression/DiabetesProgression-EN.ipynb)
+
 Predictive study on the progression of diabetes using the Scikit-Learn Diabetes dataset. The project compares three regression models and provides an in-depth interpretation of the results.
 
 ---

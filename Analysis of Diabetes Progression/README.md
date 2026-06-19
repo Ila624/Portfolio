@@ -66,10 +66,8 @@ Predictive study on the progression of diabetes using the Scikit-Learn Diabetes 
 
 ---
 
-## Tech Stack
+## Requirements
 
-![Python](https://img.shields.io/badge/Python-3.12-blue)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-grey)
-![pandas](https://img.shields.io/badge/pandas-grey)
-![matplotlib](https://img.shields.io/badge/matplotlib-grey)
-![seaborn](https://img.shields.io/badge/seaborn-grey)
+```bash
+pip install numpy pandas matplotlib seaborn scikit-learn
+```

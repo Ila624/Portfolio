@@ -18,7 +18,7 @@ Predictive study on the progression of diabetes using the Scikit-Learn Diabetes 
 ## Project Structure
 
 ```
-├── IlariaBertottiMLA2-EN.ipynb   # Main notebook (English)
+├── DiabitesProgression-EN.ipynb   # Main notebook (English)
 └── README.md
 ```
 

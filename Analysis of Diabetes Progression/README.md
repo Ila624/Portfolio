@@ -59,7 +59,7 @@ Predictive study on the progression of diabetes using the Scikit-Learn Diabetes 
 
 ## Notebook
 
-> 📓 [View the full notebook here](#) ← *add link after uploading*
+> 📓 [View the full notebook here](DiabitesProgression-EN.ipynb)
 
 ---
 

@@ -16,8 +16,8 @@ Each part includes data exploration, preprocessing, model training, evaluation, 
 
 | File | Description |
 |---|---|
-| `PortfolioAdvancedAnalytics.ipynb` | Italian version of the notebook |
-| `PortfolioAdvancedAnalytics_EN.ipynb` | English version of the notebook |
+| [VenditeSupermercato_IT](./VenditeSupermercato_IT) | Italian version of the notebook |
+| [SupermarketSales_EN](./SupermarketSales_EN) | English version of the notebook |
 
 ## Datasets
 

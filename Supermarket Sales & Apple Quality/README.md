@@ -18,8 +18,8 @@ Each part includes data exploration, preprocessing, model training, evaluation, 
 |---|---|
 | [VenditeSupermercato_IT](./VenditeSupermercato_IT) | Italian version of the notebook |
 | [SupermarketSales_EN](./SupermarketSales_EN) | English version of the notebook |
-| [apple_quality](./apple_quality.csv) | English version of the notebook |
-| [supermarket_sales](./supermarket_sales.csv) | English version of the notebook |
+| [apple_quality](./apple_quality.csv) | Dataset analyzed in part 2 |
+| [supermarket_sales](./supermarket_sales.csv) | Dataset analyzed in part 1 |
 
 ## Datasets
 

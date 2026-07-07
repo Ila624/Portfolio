@@ -1,0 +1,476 @@
+{
+  "name": "Project Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1776,
+        -160
+      ],
+      "id": "9f7d608b-d2cc-4d75-a4e4-16cdd0e2cc41",
+      "name": "Telegram Trigger",
+      "webhookId": "6deb7752-774b-4af6-ae35-cbda0bfb41dd",
+      "credentials": {
+        "telegramApi": {
+          "id": "4T25e2gIL76K3cvX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.message.text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    },
+                    "id": "845fa1dd-1188-4240-a00d-f4dd3f6179bb"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "39d37030-cf51-4446-b33f-7669a6187bda",
+                    "leftValue": "={{ $json.message.voice.file_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "exists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        -1568,
+        -160
+      ],
+      "id": "20eb00e7-25cf-4460-8169-bd5afa196bad",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "fileId": "={{ $json.message.voice.file_id }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -1392,
+        144
+      ],
+      "id": "ed5cc044-5f4f-49ff-b502-6edadd5f3e51",
+      "name": "Get a file",
+      "webhookId": "018779b6-44a1-4050-8f2c-682591900cda",
+      "credentials": {
+        "telegramApi": {
+          "id": "4T25e2gIL76K3cvX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('Telegram Trigger').item.json.message.text ?? $('HTTP Request').item.json.text }}",
+        "options": {
+          "systemMessage": "=Sei un assistente personale AI. \nLa data e l'ora correnti sono: {{$now}}\n\n## STRUMENTI DISPONIBILI\n- **rubrica contatti**: cerca informazioni sui contatti (email, telefono, ecc.)\n- **calendario**: crea e gestisce eventi\n- **invia email**: invia messaggi email\n\n## REGOLE OBBLIGATORIE — EMAIL\n\nPrima di inviare qualsiasi email devi SEMPRE:\n1. Cercare il destinatario nella \"rubrica contatti\" usando il suo nome\n2. Usare ESCLUSIVAMENTE l'indirizzo email restituito dalla rubrica\n3. Se la rubrica non trova il contatto, avvisa l'utente e NON inviare l'email\n\n⛔ È ASSOLUTAMENTE VIETATO:\n- Inventare, dedurre o ipotizzare indirizzi email\n- Usare indirizzi placeholder come @example.com, @test.com o simili\n- Procedere con l'invio senza aver prima consultato la rubrica\n\n## REGOLE OBBLIGATORIE — CALENDARIO\n\nPrima di creare un evento con altri partecipanti devi SEMPRE:\n1. Cercare i partecipanti nella \"rubrica contatti\"\n2. Usare ESCLUSIVAMENTE le email trovate nella rubrica\n3. Se un contatto non viene trovato, avvisa l'utente.\n\nRispondi sempre nella lingua dell'utente."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -512,
+        -176
+      ],
+      "id": "f2cfd32d-da9b-49d3-9377-eae2948d46f7",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "model": "llama-3.3-70b-versatile",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -704,
+        112
+      ],
+      "id": "16c73702-0d29-4ea3-b125-b8d45e711610",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "uLaIU8GlWtVHeUPC",
+          "name": "Groq account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Switch').item.json.message.chat.id }}",
+        "contextWindowLength": 10
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        -544,
+        112
+      ],
+      "id": "5041a62b-236f-49fe-ac78-3eaa1b3e0592",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        -176
+      ],
+      "id": "3216c974-df1a-4917-b782-dbca5687484a",
+      "name": "Send a text message",
+      "webhookId": "b23dde42-59bc-4350-a183-ec76ac1bfe31",
+      "credentials": {
+        "telegramApi": {
+          "id": "4T25e2gIL76K3cvX",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "airtableOAuth2Api",
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "apptBPktwHr6t1eFo",
+          "mode": "list",
+          "cachedResultName": "Agente prova 2",
+          "cachedResultUrl": "https://airtable.com/apptBPktwHr6t1eFo"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tbl6FFqXXGT7CDXcE",
+          "mode": "list",
+          "cachedResultName": "rubrica",
+          "cachedResultUrl": "https://airtable.com/apptBPktwHr6t1eFo/tbl6FFqXXGT7CDXcE"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.airtableTool",
+      "typeVersion": 2.2,
+      "position": [
+        -160,
+        224
+      ],
+      "id": "2a96f4b6-ccb3-4c20-96c8-f1a89948c01b",
+      "name": "rubrica contatti",
+      "credentials": {
+        "airtableOAuth2Api": {
+          "id": "S5O4VH1f4Cb2VOIr",
+          "name": "Airtable account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.groq.com/openai/v1/audio/transcriptions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "whisper-large-v3"
+            },
+            {
+              "name": "response_format",
+              "value": "json"
+            },
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {}
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -1040,
+        144
+      ],
+      "id": "7c8421f6-4bc3-4037-930a-f7ae3b7cc3e7",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "biqRBvncI9J815Yq",
+          "name": "Header Auth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Loop over input items and add a new field called 'myNewField' to the JSON of each one\nconst item = $input.first();\nitem.binary.data.fileName = 'audio.ogg';\nitem.binary.data.mimeType = 'audio/ogg';\nreturn [item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1216,
+        144
+      ],
+      "id": "0031d141-62de-49f2-8971-7d5d6541e27b",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "calendar": {
+          "__rl": true,
+          "value": "ilabert98@gmail.com",
+          "mode": "list",
+          "cachedResultName": "ilabert98@gmail.com"
+        },
+        "start": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Start', ``, 'string') }}",
+        "end": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('End', ``, 'string') }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "typeVersion": 1.3,
+      "position": [
+        -304,
+        224
+      ],
+      "id": "1364c7f1-6b57-4bf1-b7b9-c1fe0c372305",
+      "name": "calendario",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "H0dsEkVyL1kuHXN6",
+          "name": "Google Calendar OAuth2 API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('To', ``, 'string') }}",
+        "subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmailTool",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        224
+      ],
+      "id": "56705766-32d9-47d3-82e8-d9b03e926bc5",
+      "name": "invia email",
+      "webhookId": "d525b538-a8ff-4dfe-9fd3-31647bfb1b3e",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "MS86la5KJ6SS6Q2t",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Get a file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "rubrica contatti": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get a file": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "calendario": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "invia email": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "5f3f06e8-4999-4891-83eb-7bca1bbaaddb",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "a08326e9429a4fed07b41cdde5b32a41525ae2f8b387eba514a9e3564bdbc270"
+  },
+  "nodeGroups": [],
+  "id": "hNa76fShT8PZxqxc",
+  "tags": []
+}

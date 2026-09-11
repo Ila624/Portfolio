@@ -1,0 +1,17 @@
+langchain
+langchain-groq
+langchain-core
+langgraph
+streamlit
+python-dotenv
+pandas
+numpy
+matplotlib
+
+# RAG: retrieval su documenti testuali (guide, FAQ)
+langchain-community
+langchain-classic
+langchain-text-splitters
+langchain-huggingface
+sentence-transformers
+faiss-cpu

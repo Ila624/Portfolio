@@ -21,8 +21,8 @@ The study is divided into three interconnected dimensions:
 ## 📊 Presentation Links
 The insights, charts, and final conclusions of this project have been compiled into an interactive presentation available in both languages:
 
-* **[Link alla Presentazione (Italiano)](https://www.canva.com/design/DAGfW-7OC7E/ncdX8ut5evtBgGVblqQE7w/edit)**
-* **[Link to Presentation (English)](https://www.canva.com/design/DAHLt5K8Ea4/09tR_BsVQkwtx_V7XiC7Og/edit)**
+* **[Link alla Presentazione (Italiano)](https://canva.link/z02ks5aag1s38dp)**
+* **[Link to Presentation (English)](https://canva.link/el132d1otp5j6k2)**
 
 ---
 

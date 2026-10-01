@@ -55,10 +55,10 @@ Il test set viene usato solo nella valutazione finale: tutte le decisioni di pre
 
 ## Come eseguire il notebook
 
-Requisiti: Python 3.10 o superiore e le librerie seguenti.
+Il notebook è stato sviluppato con Python 3.12. Le librerie necessarie, con le versioni usate, sono elencate in `requirements.txt`:
 
 ```bash
-pip install pandas numpy matplotlib seaborn scipy scikit-learn jupyter
+pip install -r requirements.txt
 ```
 
 Poi, con `train.csv` e `test.csv` nella stessa cartella:
@@ -76,5 +76,6 @@ ed eseguire tutte le celle in ordine (*Restart & Run All*). L'esecuzione complet
 ├── train.csv                # dati di training
 ├── test.csv                 # dati di test
 ├── chi2_top_features.png    # grafico generato dal notebook
+├── requirements.txt         # librerie e versioni usate
 └── README.md
 ```

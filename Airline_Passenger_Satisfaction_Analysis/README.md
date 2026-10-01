@@ -4,6 +4,10 @@ Progetto di data science che analizza i dati di un questionario post-volo per ca
 
 Il lavoro segue un percorso completo: analisi esplorativa, selezione delle feature, scelta motivata della metrica, confronto tra modelli con baseline di riferimento, ottimizzazione degli iperparametri e valutazione finale su un test set mai usato prima.
 
+## Presentazione
+
+La presentazione del progetto è disponibile su Canva: [Apri la presentazione](https://canva.link/lop6erevifwl455)
+
 ## Dataset
 
 **Airline Passenger Satisfaction**, dataset pubblico disponibile su [Kaggle](https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction).

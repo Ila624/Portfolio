@@ -1,4 +1,4 @@
-# Second-Hand Fashion Marketplace: User Behavior Analysis
+# RiCapo – Second-Hand Fashion Marketplace Analysis
 
 Final data analysis project on a second-hand clothing marketplace, a platform that promotes sustainable fashion and the circular economy by letting users resell used clothes, accessories and shoes.
 

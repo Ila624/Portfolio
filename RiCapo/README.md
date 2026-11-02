@@ -71,7 +71,7 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 2. **Personas**: segmentation of users into typical profiles, combining selling frequency and prevailing price tier
 3. **Strategy**: suggested actions for each profile
 
-🔗 **Dashboard on Tableau Public**: [https://public.tableau.com/views/MarketplaceSeconf-HandFascionProgettoFinaleB/IlMarketplaceinnumeri?:language=it-IT&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
+🔗 [**Dashboard on Tableau Public**](https://public.tableau.com/views/MarketplaceSeconf-HandFascionProgettoFinaleB/IlMarketplaceinnumeri?:language=it-IT&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## Technologies
 
@@ -88,4 +88,5 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 
 ## Presentation
 
-🔗 **Project presentation (Canva)**: [https://canva.link/2beho7ltrpz99mh]
+🔗 [**Presentazione progetto (IT)**](https://canva.link/2beho7ltrpz99mh)
+🔗 [**Project presentation (EN)**](#)

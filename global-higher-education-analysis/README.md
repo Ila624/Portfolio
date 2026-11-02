@@ -4,7 +4,7 @@
 This data-driven report examines global university student demographics across 1,397 institutions in 93 countries. Leveraging data visualized through Looker Studio, the project evaluates enrollment trends, regional gender disparities, and international student mobility to understand the socio-economic and cultural factors shaping higher education worldwide.
 
 ### Quick Links
-* 🔗 [Interactive Looker Studio Dashboard](INSERISCI_QUI_IL_LINK_DASHBOARD)
+* 🔗 [Interactive Looker Studio Dashboard](https://lookerstudio.google.com/reporting/5dd184ad-cb34-427d-aa69-818d8dce0c87)
 * 🎨 [Presentation Slides (English)](https://canva.link/mkanln2ni4jridd)
 * 🎨 [Presentation Slides (Italian)](https://canva.link/97b44ztx14btjjk)
 

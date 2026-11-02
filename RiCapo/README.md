@@ -13,7 +13,7 @@ The project is organized in two sequential phases:
 
 ```
 ├── README.md
-├── [notebook_name].ipynb                  # full EDA
+├── EDA_Fashion_Marketplace.ipynb          # full EDA
 ├── Fashion_data_Final_Project.csv         # original dataset (one row = one sale)
 └── user_summary_tableau.csv               # per-user aggregated data, input for the dashboard
 ```
@@ -71,7 +71,7 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 2. **Personas**: segmentation of users into typical profiles, combining selling frequency and prevailing price tier
 3. **Strategy**: suggested actions for each profile
 
-🔗 **Dashboard on Tableau Public**: [insert link]
+🔗 **Dashboard on Tableau Public**: [https://public.tableau.com/views/MarketplaceSeconf-HandFascionProgettoFinaleB/IlMarketplaceinnumeri?:language=it-IT&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]
 
 ## Technologies
 
@@ -82,14 +82,10 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 ## How to reproduce the analysis
 
 1. Clone the repository
-2. Install the dependencies: `pip install pandas numpy matplotlib seaborn jupyterlab`
+2. Install the dependencies: `pip install -r requirements.txt`
 3. Open the notebook in Jupyter Lab and, from the Kernel menu, choose "Restart Kernel and Run All Cells". Cells must be run in order from the top, because some depend on variables created in earlier ones.
 4. The last cell of the notebook exports `user_summary_tableau.csv`, which is used as the data source in Tableau.
 
 ## Presentation
 
-🔗 **Project presentation (Canva)**: [insert link]
-
-## Author
-
-[First Last] · [LinkedIn / GitHub profile link]
+🔗 **Project presentation (Canva)**: [https://canva.link/2beho7ltrpz99mh]

@@ -13,11 +13,9 @@ The project is organized in two sequential phases:
 
 ```
 ├── README.md
-├── data/
-│   ├── Fashion_data_Final_Project.csv     # original dataset (one row = one sale)
-│   └── user_summary_tableau.csv           # per-user aggregated data, input for the dashboard
-└── notebooks/
-    └── [notebook_name].ipynb              # full EDA
+├── [notebook_name].ipynb                  # full EDA
+├── Fashion_data_Final_Project.csv         # original dataset (one row = one sale)
+└── user_summary_tableau.csv               # per-user aggregated data, input for the dashboard
 ```
 
 ## Dataset

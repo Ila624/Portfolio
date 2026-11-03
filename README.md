@@ -19,11 +19,26 @@ Welcome to my Data Science Portfolio. Here you'll find a collection of my projec
 
 
 
+## 🛠 Skills & Tools
 
-## 🛠️ Skills & Tools
-* **Programming:** Python (Pandas, NumPy, Scikit-Learn), SQL
-* **Data Visualization:** Tableau, Data Studio, Canva
-* **Methodologies:** Exploratory Data Analysis (EDA), Predictive Modeling
+**Programming & Data**
+Python (Pandas, NumPy, SciPy) · SQL (T-SQL / SQL Server) · Jupyter · Git & GitHub
+
+**Machine Learning**
+Scikit-learn · XGBoost · Regression, Classification, Clustering, Time Series Forecasting · Feature Selection (Chi-square, Mutual Information, T-test) · Pipelines & Hyperparameter Tuning (GridSearchCV, RandomizedSearchCV)
+
+**NLP**
+NLTK · Topic Modeling (LDA)
+
+**Generative AI & Agents**
+LangChain · LangGraph · RAG (FAISS, Sentence-Transformers, Cross-Encoder Reranking, MultiQueryRetriever) · Tool Calling · Groq API · n8n
+
+**Data Visualization & BI**
+Tableau · Looker Studio · Matplotlib · Seaborn · Folium · GeoPandas · Streamlit · Canva
+
+**Methodologies**
+Exploratory Data Analysis · Data Cleaning & Integration · Predictive Modeling · Geospatial Analysis · Data Storytelling
+
 
 ## 📫 Connect with me
 * **LinkedIn:** [My profile](www.linkedin.com/in/ilariabertotti)

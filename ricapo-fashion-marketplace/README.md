@@ -13,7 +13,9 @@ The project is organized in two sequential phases:
 
 ```
 ├── README.md
-├── EDA_Fashion_Marketplace.ipynb          # full EDA
+├── requirements.txt
+├── Final_Project_Part1_EN.ipynb           # full EDA (English)
+├── Finale_parte1.ipynb                    # full EDA (Italian, original version)
 ├── Fashion_data_Final_Project.csv         # original dataset (one row = one sale)
 └── user_summary_tableau.csv               # per-user aggregated data, input for the dashboard
 ```
@@ -48,10 +50,11 @@ The notebook follows these steps:
 6. Cross analysis: what drives product success (category, price tier, designer, ratings)
 7. User-level analysis (selling frequency, prevailing price tier, tenure)
 8. Summary of insights and conclusions
+9. Export of the per-user table for Tableau
 
 ### Key findings
 
-- **Strong growth** in sales volume from 2021 to 2023, a sign of an expanding marketplace. No particularly marked seasonal or weekly peaks emerge.
+- **Strong growth** in sales volume from 2021 to 2023, a sign of an expanding marketplace. Seasonality is mild: January is the strongest month (possibly unwanted Christmas gifts being resold) and no day of the week clearly dominates.
 - **`belt` is the best-selling category** (339 sales, about 34%), an unexpected result for a fashion marketplace, where one would expect items such as shirts or shoes to dominate.
 - **No relationship between sales volume and average rating** at designer level (correlation ≈ -0.24): with the available data, successful designers cannot be identified from star ratings.
 - **User behavior**: 4.1 sales per user on average (median 4, range 1–11), with no extreme power sellers. About 23% of users made only 1–2 sales, while 7.5% made 8 or more.
@@ -71,8 +74,12 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 2. **Personas**: segmentation of users into typical profiles, combining selling frequency and prevailing price tier
 3. **Strategy**: suggested actions for each profile
 
-🔗 [**Dashboard on Tableau Public (IT)**](https://public.tableau.com/views/MarketplaceSeconf-HandFascionProgettoFinaleB/IlMarketplaceinnumeri?:language=it-IT&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-🔗[**Dashboard on Tableau Public (EN)**](https://public.tableau.com:9443/views/Marketplace_Second-Hand_Fashion_Final_Project_EN/TheMarketplaceinNumbers?:language=it-IT&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+The six personas: *The Style Icon*, *The Rising Star*, *The Closet Clearer*, *The Curator*, *The Minimalist* and *The Drifter*.
+
+🔗 [**Dashboard on Tableau Public (EN)**](https://public.tableau.com/views/Marketplace_Second-Hand_Fashion_Final_Project_EN/TheMarketplaceinNumbers)<br>
+🔗 [**Dashboard on Tableau Public (IT)**](https://public.tableau.com/views/MarketplaceSeconf-HandFascionProgettoFinaleB/IlMarketplaceinnumeri)
+
+> Note: the notebook exports `user_summary_tableau.csv` with English column names (`n_sales`, `avg_stars`, `avg_tenure_days`, `prevailing_level`). The published dashboards were built on an earlier export with Italian column names (`n_vendite`, `stars_medie`, `tenure_medio_giorni`, `livello_prevalente`), which are shown in English inside Tableau. Connecting the workbook to a fresh export requires remapping these four fields (*Data → Replace Data Source* / *Replace References*).
 
 ## Technologies
 
@@ -85,9 +92,9 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 1. Clone the repository
 2. Install the dependencies: `pip install -r requirements.txt`
 3. Open the notebook in Jupyter Lab and, from the Kernel menu, choose "Restart Kernel and Run All Cells". Cells must be run in order from the top, because some depend on variables created in earlier ones.
-4. The last cell of the notebook exports `user_summary_tableau.csv`, which is used as the data source in Tableau.
+4. The last cell of the notebook exports `user_summary_tableau.csv`, which is used as the data source in Tableau. Both notebooks write to the same file name: the English notebook exports English column names, the Italian one Italian column names, so the file in the repository reflects whichever notebook was run last (the committed version comes from the English notebook).
 
 ## Presentation
 
+🔗 [**Project presentation (EN)**](#)<br>
 🔗 [**Presentazione progetto (IT)**](https://canva.link/2beho7ltrpz99mh)
-🔗 [**Project presentation (EN)**](#)

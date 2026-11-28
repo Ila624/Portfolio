@@ -76,7 +76,7 @@ The dashboard turns the EDA results into an interactive tool to tell the story o
 
 The six personas: *The Style Icon*, *The Rising Star*, *The Closet Clearer*, *The Curator*, *The Minimalist* and *The Drifter*.
 
-🔗 [**Dashboard on Tableau Public (EN)**](https://canva.link/wewi7enqdt3yslh)<br>
+🔗 [**Dashboard on Tableau Public (EN)**](https://public.tableau.com/views/Marketplace_Second-Hand_Fashion_Final_Project_EN/TheMarketplaceinNumbers)<br>
 🔗 [**Dashboard on Tableau Public (IT)**](https://public.tableau.com/views/MarketplaceSeconf-HandFascionProgettoFinaleB/IlMarketplaceinnumeri)
 
 > Note: the notebook exports `user_summary_tableau.csv` with English column names (`n_sales`, `avg_stars`, `avg_tenure_days`, `prevailing_level`). The published dashboards were built on an earlier export with Italian column names (`n_vendite`, `stars_medie`, `tenure_medio_giorni`, `livello_prevalente`), which are shown in English inside Tableau. Connecting the workbook to a fresh export requires remapping these four fields (*Data → Replace Data Source* / *Replace References*).
